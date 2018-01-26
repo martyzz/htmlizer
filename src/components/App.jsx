@@ -1,22 +1,60 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import Modal from "react-modal";
 
-import Navigator from "./Navigator";
-import Home from "./sections/Home";
-import Form from "./sections/Form";
+import Header from "./header/Header";
+import Editor from "./editor/Editor";
+
+import Loader from "./persistance/Loader";
+import NotFound from "./persistance/NotFound";
+
+import "../assets/sass/App.sass";
+
+import { persistanceLoadForParams } from "../actions/persistanceActions";
 
 class App extends Component {
+  renderMainComponent() {
+    const { isLoading, notFound, match: { params } } = this.props;
+    const { persistanceLoadForParams } = this.props;
+
+    if (isLoading) {
+      persistanceLoadForParams(params);
+      return <Loader />;
+    }
+
+    if (notFound) {
+      return <NotFound />;
+    }
+
+    return <Editor />;
+  }
+
   render() {
+    const { match: { params } } = this.props;
+
     return (
-      <div className="App">
-        <Navigator />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/form" component={Form} />
-        </Switch>
+      <div className="App" ref={app => Modal.setAppElement(app)}>
+        <Header params={params} />
+        {this.renderMainComponent()}
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  const { persistance: { isLoading, notFound } } = state;
+  return {
+    isLoading,
+    notFound
+  };
+};
+
+const mapDispatchToProps = {
+  persistanceLoadForParams
+};
+
+App = withRouter(App);
+App = connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default App;

@@ -1,0 +1,93 @@
+@import '../../variables.sass'
+
+.VisualPane
+  flex: 1
+  position: relative
+  background-color: #1b3036
+
+  .rst__rowWrapper
+    padding-top: 1px
+    padding-bottom: 1px
+
+  .rst__moveHandle, .rst__loadingHandle
+    border: none
+    border-radius: 50%
+    box-shadow: none
+    background-color: #40798c
+    width: 42px
+
+  .rst__lineHalfHorizontalRight:before, .rst__lineFullVertical:after, .rst__lineHalfVerticalTop:after, .rst__lineHalfVerticalBottom:after, .rst__lineChildren:after
+      background-color: $primaryLight2
+
+  .rst__rowContents
+    background-color: #385158
+    padding: 10px
+    border: none
+    border-radius: 0px
+    box-shadow: none
+    margin-left: -21px
+    padding-left: 25px
+    border-top-right-radius: 21px
+    border-bottom-right-radius: 21px
+    font-family: $monospaceFont
+    cursor: pointer
+    font-size: 0.9em
+
+    &:hover
+      background-color: #46646d
+
+    button.control
+      width: 25px
+      height: 25px
+      margin: 0
+      padding: 0
+      text-align: center
+      vertical-align: middle
+      background: #1b3036
+      border: none
+      outline: none
+      border-radius: 50%
+      color: $primaryLight2
+      font-size: 0.7em
+      cursor: pointer
+      margin-left: 2.5px
+    
+      &:hover
+        background: $primaryDark2
+
+    span.element, span.properties
+      font-weight: 300
+      color: $primaryLight
+
+    span.properties
+      color: $primaryLight2
+      font-size: 0.7em
+
+    span.text
+      color: $primaryLight
+      font-size: 0.7em
+      font-weight: 300
+      vertical-align: middle
+      line-height: 50px;
+
+    span.comment
+      color: $primaryLight2
+      font-size: 0.7em
+      font-weight: 300
+      vertical-align: middle
+      line-height: 50px;
+
+
+  .rst__rowLandingPad:before
+    border: none
+    border-radius: 29px
+    background: rgba(255, 255, 255, 0.5)
+
+  .rst__rowCancelPad:before
+    border: none
+    border-radius: 29px
+    background: rgba(255, 0, 0, 0.5)
+
+  .rst__row.is-selected
+    .rst__rowContents
+      background: #613246

@@ -1,0 +1,36 @@
+@import '../../variables.sass';
+
+.PropertiesPane
+  font-size: 0.8em
+  font-family: $monospaceFont
+  text-align: center
+  color: $primaryLight2
+  
+  table
+    margin-top: 10px
+    width: calc(100% - 10px)
+    margin-left: 10px
+    border-collapse: collapse
+
+    th, td
+      border-bottom: 2px solid $primaryDark
+      background-color: $primaryDark3
+      color: $primaryLight2
+      font-family: $monospaceFont
+      text-align: left
+
+      input, textarea
+        width: 100%
+        padding: 0
+        margin: 0
+        background: transparent
+        color: $primaryLight
+        border: none
+        outline: none
+        font-family: $monospaceFont
+
+      textarea
+        min-height: 200px
+
+      &:nth-child(2)
+        border-left: 2px solid $primaryDark

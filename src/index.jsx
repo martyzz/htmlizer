@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import reduxThunk from "redux-thunk";
 import createHistory from "history/createBrowserHistory";
+import { Route } from "react-router";
 import { ConnectedRouter, routerMiddleware } from "react-router-redux";
 
 import App from "./components/App";
@@ -23,7 +24,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <App />
+      <Route path="/:identifier?/:version?" component={App} />
     </ConnectedRouter>
   </Provider>,
   document.querySelector("#root")

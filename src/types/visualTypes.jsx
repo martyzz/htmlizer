@@ -1,0 +1,2 @@
+export const UPDATE_BRANCHES = "visual/UPDATE_BRANCHES";
+export const UPDATE_SELECTED_ID = "visual/UPDATE_SELECTED_ID";

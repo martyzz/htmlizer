@@ -1,0 +1,39 @@
+@import '../../variables.sass';
+
+.ElementsPane
+  padding-top: 25px
+
+  .Element
+    margin-top: 2px
+    margin-bottom: 2px
+    width: calc(100% - 10px)
+    padding-left: 10px
+    line-height: 21px
+    height: 21px
+    font-size: 0.9em;
+    color: $primaryLight
+    font-family: $monospaceFont
+    background: #385158
+    cursor: move
+    border-radius: 10.5px
+
+    &:hover
+      background-color: #46646d
+
+  .ElementsFilter
+    position: absolute
+    margin-top: -25px
+    width: calc(100% - 10px)
+
+    input
+      padding-left: 10px
+      width: calc(100% - 10px)
+      height: 25px
+      outline: 0
+      font-size: 0.9em;
+      background: $primaryDark
+      opacity: 0.9
+      color: $primaryLight
+      text-align: left
+      border: none
+      font-family: $monospaceFont
