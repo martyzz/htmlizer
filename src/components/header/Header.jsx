@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 
 import Modal from "react-modal";
 
+import ModalContent from "./ModalContent";
+
 import { persistanceSaveForParams } from "../../actions/persistanceActions";
 
 import "../../assets/sass/header/Header.sass";
@@ -58,15 +60,7 @@ class Header extends Component {
         onRequestClose={this.onHelpClose.bind(this)}
         shouldCloseOnOverlayClick={true}
       >
-        <div className="help-modal-inner">
-          <h1>htmlizer</h1>
-          <p>
-            React & Redux App created in order to help people understand
-            structure of HTML, sort of... because it is just an experiment. I
-            really wanted to try how does one work with recursive tree-like
-            structers in React & Redux environment.
-          </p>
-        </div>
+        <ModalContent />
       </Modal>
     );
   }
