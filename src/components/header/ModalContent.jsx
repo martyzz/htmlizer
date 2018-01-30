@@ -28,7 +28,9 @@ const ModalContent = () => (
         <a href="https://github.com/axios/axios">axios/axios</a>
       </li>
       <li>
-        <a href="https://github.com/JedWatson/classnames" />JedWatson/classnames
+        <a href="https://github.com/JedWatson/classnames">
+          JedWatson/classnames
+        </a>
       </li>
       <li>
         <a href="https://github.com/andrejewski/himalaya">
